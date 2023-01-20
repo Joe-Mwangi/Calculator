@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+:root{
+    /* ## Colors
+
+### Theme 1
+
+#### Backgrounds */
+
+
+--container-bg: hsl(222, 26%, 31%);
+--toggle-keypad-bg: hsl(223, 31%, 20%);
+--screen-bg: hsl(224, 36%, 15%);
+
+/* #### Keys */
+
+
+--btn-bg: hsl(225, 21%, 49%);
+--btn-shadow: hsl(224, 28%, 35%);
+
+--toggle-bg: hsl(6, 63%, 50%); 
+--toggle-shadow: hsl(6, 70%, 34%);
+
+--btn-main-bg: hsl(30, 25%, 89%);
+--btn-main-shadow: hsl(28, 16%, 65%); 
+
+/* #### Text */
+
+--num-color: hsl(221, 14%, 31%);
+
+--text-color: #fff;
+--White: #fff;
+--equals: #fff;
+
+--Font-num: 2rem;
+
+
+/* --Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan) */
+--Weight: 700;
+
+}
+.theme-2{
+    /* ### Theme 2 */
+
+/* #### Backgrounds */
+
+--container-bg: hsl(0, 0%, 90%);
+--toggle-keypad-bg: hsl(0, 5%, 81%);
+--screen-bg: hsl(0, 0%, 93%);
+
+/* #### Keys */
+
+--btn-bg: hsl(185, 42%, 37%);
+--btn-shadow: hsl(185, 58%, 25%);
+
+--toggle-bg: hsl(25, 98%, 40%);
+--toggle-shadow: hsl(25, 99%, 27%);
+
+--btn-main-bg: hsl(45, 7%, 89%);
+--btn-main-shadow: hsl(35, 11%, 61%);
+
+/* #### Text */
+
+--text-color: hsl(60, 10%, 19%);
+--num-color: hsl(60, 10%, 19%);
+}
+.theme-3{
+    /* ### Theme 3
+
+#### Backgrounds */
+
+--container-bg: hsl(268, 75%, 9%);
+--toggle-keypad-bg: hsl(268, 71%, 12%);
+--screen-bg: hsl(268, 71%, 12%);
+/* #### Keys */
+
+--btn-bg: hsl(281, 89%, 26%);
+--btn-shadow: hsl(285, 91%, 52%);
+
+--toggle-bg: hsl(176, 100%, 44%);
+--toggle-shadow: hsl(177, 92%, 70%);
+
+--btn-main-bg: hsl(268, 47%, 21%);
+--btn-main-shadow: hsl(290, 70%, 36%);
+
+/* #### Text */
+
+--text-color: hsl(52, 100%, 62%);
+--num-color: hsl(52, 100%, 62%);
+
+--equals: hsl(198, 20%, 13%);
+}
+
+p{
+    font-size: .9rem;
+    font-weight: var(--Weight);
+    text-transform: uppercase;
+}
+h2{
+    font-weight: var(--Weight);
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+}
+
+.calculator{
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* -------top part--------------------------- */
+.header-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.theme{
+    display: flex;
+    align-items: flex-end;
+    gap: .8rem;
+}
+.num{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: .2rem;
+}
+.hide{
+    opacity: 0;
+}
+
+.toggle{
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    gap: .2rem;
+    align-items: center;
+    padding: .3rem;
+    cursor: pointer;
+    background-color: var(--toggle-keypad-bg);
+}
+.toggle-btn{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--toggle-bg);
+    transition: all 250ms ease-in-out;
+}
+
+
+/* --------------screen part----------------------------- */
+
+.input-val{
+    font-size: 30px;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: var(--Weight);
+    color: var(--text-color);
+    background-color: var(--screen-bg);
+}
+
+/* ---------------------btns part--------------------------- */
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--toggle-keypad-bg);
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 5px;
+}
+.btn{
+    font-size: var(--Font-num);
+    font-weight: var(--Weight);
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+    cursor: pointer;
+    color: var(--num-color);
+    background-color: var(--btn-main-bg);
+    box-shadow: 0 2px 0 2px var(--btn-main-shadow);
+}
+.reset, .delete{
+    background-color: var(--btn-bg);
+    box-shadow: 0 2px 0 2px var(--btn-shadow);
+    color: var(--White);
+    font-size: 1.5rem;
+}
+.reset, .equals{
+    grid-column: span 2;
+}
+.equals{
+    background-color: var(--toggle-bg);
+    box-shadow: 0 2px 0 2px var(--toggle-shadow);
+    color: var(--equals);
+    font-size: 1.5rem;
+}
+@media (orientation: portrait) and (max-width: 500px) {
+    .container{
+        padding: 1rem;
+    }    
+    .calculator{
+        width: 100%;
+    }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+    .container{
+        padding: 1rem;
+    }    
+    .calculator{
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .header-wrapper{
+        width: 40%;
+        gap: 3rem;
+    }
+    .header{
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+@media (orientation: portrait) and (max-height: 500px) {
+    .container{
+        padding: 1rem;
+    }    
+    .calculator{
+        width: 100%;
+        gap: .8rem;
+    }
+    .input-val{
+        font-size: 25px;
+        padding: .8rem;
+    }
+    .buttons{
+        gap: .8rem;
+        padding: .8rem;
+    }
+    .btn{
+        font-size: 1.4rem;
+    }    
+}
+@media (orientation: landscape) and (max-width: 500px) {
+    .container{
+        padding: 1rem;
+    }    
+    .calculator{
+        width: 100%;
+        gap: .8rem;
+    }
+    .input-val{
+        font-size: 25px;
+        padding: .8rem;
+    }
+    .buttons{
+        gap: .8rem;
+        padding: .8rem;
+    }
+    .btn{
+        font-size: 1.4rem;
+    } 
+}
